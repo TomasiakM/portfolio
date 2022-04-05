@@ -1,0 +1,37 @@
+$transition-offset: 50px;
+
+@mixin fade {
+    opacity: 0;
+    transition: all 0.3s ease-in;
+
+    &.visible {
+        opacity: 1;
+    }
+}
+
+@mixin fadeFromLeft {
+    @include fade;
+    transform: translateX(-$transition-offset);
+
+    &.visible {
+        transform: translateX(0);
+    }
+}
+
+@mixin fadeFromRight {
+    @include fade;
+    transform: translateX($transition-offset);
+
+    &.visible {
+        transform: translateX(0);
+    }
+}
+
+@mixin fadeFromBottom {
+    @include fade;
+    transform: translateY($transition-offset);
+
+    &.visible {
+        transform: translateY(0);
+    }
+}
